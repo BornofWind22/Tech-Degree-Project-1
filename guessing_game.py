@@ -23,6 +23,7 @@ def start_game():
                 print("We hope you enjoyed playing the Number Guessing Game")
                 new_game = input("Would you like to play again? [Yes/No] ")
                 if new_game.lower() == "yes":
+                    print("The highscore is {}.".format(attempts))
                     start_game()
                 break
         except ValueError:
