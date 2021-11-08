@@ -1,9 +1,14 @@
+#Python Web Development Techdegree
+#Project 1 - Number Guessing Game
+#--------------------------------
 print("=========================")
 print("Number Guessing Game")
 print("=========================")
 import random
 def start_game():
+    
     player_input= input("Would you like to play a number guessing game? [Yes/No] ")
+    highscore = 10
     random_number = random.randint(1,10)
     attempts = 0
     while player_input.lower() == "yes":
@@ -22,8 +27,10 @@ def start_game():
                 print("That is correct! You picked the right number in {} tries.".format(attempts))
                 print("We hope you enjoyed playing the Number Guessing Game")
                 new_game = input("Would you like to play again? [Yes/No] ")
+                if attempts < highscore:
+                        highscore = attempts
                 if new_game.lower() == "yes":
-                    print("The highscore is {}.".format(attempts))
+                    print("The highscore is {}.".format(highscore))
                     start_game()
                 break
         except ValueError:
